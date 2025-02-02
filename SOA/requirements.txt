@@ -1,0 +1,7 @@
+prometheus_client
+flask          
+flask-restful  
+pika              
+psycopg2-binary 
+python-dotenv  
+requests

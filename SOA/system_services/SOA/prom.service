@@ -1,0 +1,16 @@
+[Unit]
+Description=Exporter Flask Application
+After=network.target
+
+[Service]
+User=fury
+Group=fury
+WorkingDirectory=/home/fury/Documents/ubuntu/SOA
+ExecStart=/home/fury/Documents/ubuntu/SOA/env/bin/python3 /home/fury/Documents/ubuntu/SOA/prometheus.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/prometheus_soa_exporter.log
+StandardError=append:/var/log/prometheus_soa_exporter.log
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Registry Flask Application
+After=network.target
+
+[Service]
+User=fury
+Group=fury
+WorkingDirectory=/home/fury/Documents/ubuntu/SOA
+ExecStart=/home/fury/Documents/ubuntu/SOA/env/bin/python3 /home/fury/Documents/ubuntu/SOA/registry.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/soa_registry.log
+StandardError=append:/var/log/soa_registry.log
+
+[Install]
+WantedBy=multi-user.target

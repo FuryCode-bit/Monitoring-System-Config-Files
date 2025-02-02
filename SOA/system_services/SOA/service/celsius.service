@@ -1,0 +1,16 @@
+[Unit]
+Description=Celsius Flask Application
+After=network.target
+
+[Service]
+User=fury
+Group=fury
+WorkingDirectory=/home/fury/Documents/ubuntu/SOA/services
+ExecStart=/home/fury/Documents/ubuntu/SOA/env/bin/python3 /home/fury/Documents/ubuntu/SOA/services/celsius.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/celsius_soa_service.log
+StandardError=append:/var/log/celsius_soa_service.log
+
+[Install]
+WantedBy=multi-user.target

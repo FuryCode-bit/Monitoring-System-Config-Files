@@ -1,0 +1,28 @@
+Consul server:  consul agent   -server   -bootstrap-expect=3   -node=MQM-145   -data-dir=/tmp/consul-test   -config-dir=/etc/consul.d   -client=0.0.0.0 -ui
+
+replicar o comando de cma para as máquinas 186 e 189 (com as devidas mudanças)
+Consul client:
+
+consul agent \
+  -node=SM-143 \
+  -bind=192.168.1.143 \
+  -enable-script-checks=true \
+  -data-dir=/tmp/consul \
+  -config-dir=/etc/consul.d
+  -retry-join=192.168.1.180
+
+Consul client:
+
+consul agent \
+  -node=SM-144 \
+  -bind=192.168.1.144 \
+  -enable-script-checks=true \
+  -data-dir=/tmp/consul \
+  -config-dir=/etc/consul.d \
+  -retry-join=192.168.1.180
+
+https://perfecto25.medium.com/consul-fabio-your-app-6fd956094e4a
+https://fabiolb.net/quickstart/
+
+Fabio url: http://192.168.1.180:9999/
+Fabio routing ui: http://192.168.1.180:9998/
